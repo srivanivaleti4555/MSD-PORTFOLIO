@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            color: #333;
+            background-image:url(https://images.pexels.com/photos/2310713/pexels-photo-2310713.jpeg);
+       background-size:cover;     
+   }
+
+        container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+
+        header {
+           
+            color: #560063;
+background-color:#FFC0CB;
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        header img {
+            border-radius: 100%;
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+        }
+
+        header h1 {
+            margin: 10px;
+            font-size: 2.5em;
+        }
+
+        header p {
+            margin: 10px 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ffcc00;
+        }
+
+        section {
+            padding: 60px 0;
+            
+            margin: 0; /* Ensure no margin that affects background */
+        }
+
+        /* About Section Styles */
+        #about {
+            display: flex;
+            color: #560063;
+            align-items: center;
+            justify-content: space-around;
+          
+        }
+
+        #about img {
+            border-radius: 20%;
+            width: 220px;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        /* Skills Section Styles */
+        #skills {
+            padding: 40px 0;
+            
+        }
+
+        #skills .skills-list li {
+            display: flex;
+            align-items: center;
+            margin: 15px 0;
+        }
+
+        #skills .progress-bar {
+            flex: 1;
+            height: 10px;
+            
+            margin-left: 10px;
+            border-radius: 15px;
+        }
+
+        #skills .progress {
+            height: 100%;
+            background: #fff8da;
+
+            border-radius: 5px;
+        }
+
+        /* Projects Section Styles */
+        #projects {
+            padding: 40px 0;
+            
+        }
+
+        #projects .project-list {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        #projects .project {
+           
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            width: 30%;
+        }
+
+        #projects .project img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
+        #projects .project h3 {
+            margin: 15px 0;
+        }
+
+        #projects .project a {
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Education Section Styles */
+        #education {
+            padding: 40px 0;
+            
+        }
+
+        #education .education-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        #education .education-list li {
+            margin: 20px 0;
+        }
+
+        /* Contact Section Styles */
+        #contact {
+            padding: 50px 20px;
+            text-align: center;
+           
+        }
+
+        #contact form {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 0 20px;
+            flex-wrap: wrap;
+        }
+
+        #contact form label {
+            display: block;
+            text-align: left;
+            margin-bottom: 5px;
+        }
+
+        #contact form input, #contact form textarea {
+            width: calc(100% - 40px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        #contact form textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        #contact form button {
+            padding: 10px 20px;
+           
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        #contact form button:hover {
+           
+        }
+
+        .social-media a {
+            margin: 0 10px;
+            display: inline-block;
+            transition: transform 0.3s;
+        }
+
+        .social-media a:hover {
+            transform: scale(1.2);
+        }
+
+        /* Footer Styles */
+        footer {
+           
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+background-color:#ADD8E6;
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        footer ul li {
+            display: inline;
+            margin: 0 1rem;
+        }
+
+        footer ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 2rem;
+        }
+
+        footer p {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+            }
+
+            header {
+                flex-direction: column;
+            }
+
+            #about {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            #projects .project {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1>Valeti Srivani</h1>
+            <p class="tagline">"I am a student of Vignan University"</p>
+            <nav id="navbar">
+                <ul>
+                    <li><a href="#Home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about">
+        <div>
+            <img src="C:\Users\vignan\Desktop\pro.avif" alt="Your Name Profile Photo">
+        </div>
+        <div>
+            <h2>About Me</h2>
+            <p>Hello! I'm a passionate web developer with experience in creating websites and applications that are both functional and visually appealing.</p>
+            <p><b>Name:</b> V.Srivani</p>
+            <p><b>Profession:</b> B.Tech-CSE - 3rd Year</p>
+            <p><b>Location:</b> gangavarm</p>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h2>Skills</h2>
+            <ul class="skills-list">
+                <li><span>C</span><div class="progress-bar"><div class="progress" style="width: 90%;"></div></div></li>
+                <li><span>HTML</span><div class="progress-bar"><div class="progress" style="width: 80%;"></div></div></li>
+                <li><span>CSS</span><div class="progress-bar"><div class="progress" style="width: 50%;"></div></div></li>
+                <!-- Add more skills as needed -->
+            </ul>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2>Projects</h2>
+            <div class="project-list">
+                <div class="project">
+                    <h3>Project 1: CROP RECOMMENDATION</h3>
+                    <img src="C:\Users\vignan\Desktop\c.jpg" alt="Project 1">
+                    <p>This project is to guide farmers in selecting the most suitable crops for their land. This will empower farmers to make data-driven decisions, thereby improving crop yields and ensuring better management of agricultural resources.</p>
+                    <a href="link-to-live-demo-or-repository">View Project</a>
+                </div>
+                <div class="project">
+                    <h3>Project 2: CRIME ANALYSIS</h3>
+                    <img src="C:\Users\vignan\Desktop\crime-analysis-program.jpg" alt="Project 2">
+                    <p>Crime analysis is the systematic study of crime patterns and trends using data and statistical methods to inform law enforcement strategies and improve public safety. It helps in predicting, preventing, and solving crimes by identifying potential hotspots and criminal behavior.</p>
+                    <a href="link-to-live-demo-or-repository">View Project</a>
+                </div>
+                <div class="project">
+                    <h3>Project 3: IMAGE CAPTION GENERATOR</h3>
+                    <img src="C:\Users\vignan\Desktop\d.png" alt="Project 3">
+                    <p>An image caption generator uses AI to automatically create descriptive and contextually relevant captions for images, enhancing understanding and engagement. It leverages computer vision and natural language processing to describe visual content in concise text.</p>
+                    <a href="link-to-live-demo-or-repository">View Project</a>
+                </div>
+                <!-- Add more projects as needed -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <div class="container">
+            <h2 style="color:blue;">Education</h2>
+            <ul class="timeline">
+                <li>
+                    <h3>Bachelor of Science in Computer Science</h3>
+                    <p>Vignan University, vadlamudi</p>
+                    <p>Year: 2022-2026</p>
+                    <p>Relevant Courses: Data Structures, Algorithms, Operating Systems</p>
+                    <p>Certified Full Stack Web Developer</p>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <form action="submit-form.php" method="post">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="message">Message</label>
+                <textarea id="message" name="message" required></textarea>
+                
+                <button type="submit">Submit</button>
+            </form>
+            <p id="error-message" style="color:red;"></p>
+        </div>
+        <div class="social-media">
+            <a href="#twitter">Twitter</a>
+            <a href="#LinkedIn">LinkedIn</a>
+            <a href="#GitHub">GitHub</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-contact">
+                <p>Email: <a href="mailto:your.email@gmail.com">valetisrivani@gmail.com</a></p>
+                <p>Phone: +123 456 7890</p>
+            </div>
+            <div class="footer-copyright">
+                <p>&copy; 2024 valeti srivani. All Rights Reserved.</p>
+            </div>
+            <div class="social-media">
+                <a href="https://github.com/your-profile">GitHub</a>
+                <a href="https://linkedin.com/in/your-profile">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        window.onscroll = function() {myFunction()};
+        var navbar = document.getElementById("navbar");
+        var sticky = navbar.offsetTop;
+        function myFunction() {
+            if (window.scrollY >= sticky) {
+                navbar.classList.add("sticky")
+            } else {
+                navbar.classList.remove("sticky");
+            }
+        }
+    </script>
+</body>
+</html>
